@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+typedef struct 
+{
+    char Id[17];
+    int Testid;
+    int Examid;
+} B1041; 
+int main()
+{
+    int N, M, testid;
+    scanf("%d", &N); 
+    B1041 b[N]; 
+    for(int i = 0; i < N; i++)
+        scanf("%s %d %d", &b[i].Id, &b[i].Testid, &b[i].Examid); 
+    scanf("%d", &M);
+    while (M--)
+    {
+        scanf("%d", &testid);
+        for(int i = 0; i < N; i++)
+        {
+            if(b[i].Testid == testid) 
+            {
+                printf("%s %d\n", b[i].Id, b[i].Examid);
+            }
+        }
+    }
+    return 0;
+}
